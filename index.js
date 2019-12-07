@@ -41,3 +41,20 @@ var bot = controller.spawn({
     url: 'WE_WILL_GET_TO_THIS'
   }
 }).startRTM();
+
+// listening for phrases
+controller.hears('hi', 'direct_message', function(bot, message) {
+  bot.reply(message, 'Hello.');
+});
+
+controller.on('slash_command', function(bot, message) {
+  // logic goes here
+  bot.replyAcknowledge();
+  switch(message.command) {
+    case "/echo":
+      bot.reply(message, 'heard ya!')
+      break;
+    default:
+      bot.reply(message, 'Did not recognize that command, sorry!')
+  }
+});
