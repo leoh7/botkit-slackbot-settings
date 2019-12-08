@@ -43,7 +43,13 @@ var bot = controller.spawn({
   incoming_webhook: {
     url: 'WE_WILL_GET_TO_THIS'
   }
-}).startRTM();
+}).startRTM((error) => {
+  if(error) {
+    console.log('구동 실패');
+  } else {
+    bot.say({ text: '봇이 성공적으로 배포되었습니다!', channel: 'general' });
+  }
+});
 
 // listening for phrases
 controller.hears('hi', 'direct_message', function(bot, message) {
