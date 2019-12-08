@@ -21,12 +21,10 @@
   },
   "homepage": "https://github.com/leoh7/starrental-slackbot#readme",
   "dependencies": {
-    "botkit": "^0.6.21",
-    "dotenv": "^6.2.0",
+    "botbuilder-adapter-slack": "^1.0.7",
+    "dotenv": "^8.2.0",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.3"
   },
-  "devDependencies": {
-    "@types/dotenv": "^8.2.0"
-  }
+  "devDependencies": {}
 }
