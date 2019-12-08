@@ -34,6 +34,9 @@ controller.setupWebserver(process.env.PORT, function(err, webserver) {
     });
 });
 
+// Note: If you are not also establishing an RTM connection, you will need to manually run the controller.startTicking() method for conversations to work properly.
+// https://github.com/Skellington-Closet/skellington/issues/54
+// controller.startTicking();
 
 var bot = controller.spawn({
   token: process.env.BOT_TOKEN,
